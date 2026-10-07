@@ -119,6 +119,11 @@
 
             <% if authenticated? %>
               <%= link_to "Edit", edit_skill_path(skill) %>
+              <%= button_to "Delete",
+                skill_path(skill),
+                method: :delete,
+                class: "delete-link",
+                form: { data: { turbo_confirm: "Are you sure?" } } %>
             <% end %>
 
           </div>
@@ -167,6 +172,12 @@
 
             <% if authenticated? %>
               <%= link_to "Edit", edit_project_path(project) %>
+
+              <%= button_to "Delete",
+                project_path(project),
+                method: :delete,
+                class: "delete-link",
+                form: { data: { turbo_confirm: "Are you sure?" } } %>
             <% end %>
 
           </div>
@@ -213,6 +224,12 @@
 
             <% if authenticated? %>
               <%= link_to "Edit", edit_experience_path(experience) %>
+
+              <%= button_to "Delete",
+                experience_path(experience),
+                method: :delete,
+                class: "delete-link",
+                form: { data: { turbo_confirm: "Are you sure?" } } %>
             <% end %>
 
           </div>
@@ -255,6 +272,12 @@
 
             <% if authenticated? %>
               <%= link_to "Edit", edit_education_path(education) %>
+
+              <%= button_to "Delete",
+                education_path(education),
+                method: :delete,
+                class: "delete-link",
+                form: { data: { turbo_confirm: "Are you sure?" } } %>
             <% end %>
 
           </div>
