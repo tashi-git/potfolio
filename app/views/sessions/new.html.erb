@@ -1,11 +1,60 @@
-<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
-<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+<div class="login-container">
 
-<%= form_with url: session_path do |form| %>
-  <%= form.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address] %><br>
-  <%= form.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password", maxlength: 72 %><br>
-  <%= form.submit "Sign in" %>
-<% end %>
-<br>
+  <div class="login-card">
 
-<%= link_to "Forgot password?", new_password_path %>
+    <p class="login-label">WELCOME BACK</p>
+
+    <h1>Sign in</h1>
+
+    <p class="login-subtitle">
+      Sign in to manage your portfolio.
+    </p>
+
+    <% if flash[:alert] %>
+      <div class="login-alert">
+        <%= flash[:alert] %>
+      </div>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <div class="login-notice">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+
+    <%= form_with url: session_path do |form| %>
+
+      <div class="login-group">
+        <%= form.label :email_address, "Email address" %>
+        <%= form.email_field :email_address,
+          required: true,
+          autofocus: true,
+          autocomplete: "username",
+          placeholder: "Enter your email address",
+          value: params[:email_address] %>
+      </div>
+
+      <div class="login-group">
+        <%= form.label :password, "Password" %>
+        <%= form.password_field :password,
+          required: true,
+          autocomplete: "current-password",
+          placeholder: "Enter your password",
+          maxlength: 72 %>
+      </div>
+
+      <%= form.submit "Sign in", class: "login-submit" %>
+
+    <% end %>
+
+    <div class="login-forgot">
+      <%= link_to "Forgot password?", new_password_path %>
+    </div>
+
+    <div class="login-back">
+      <%= link_to "← Back to portfolio", root_path %>
+    </div>
+
+  </div>
+
+</div>

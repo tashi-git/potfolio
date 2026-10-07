@@ -1,19 +1,19 @@
-<h1>New Education</h1>
+<div class="form-container">
+  <h1>New Education</h1>
 
-<%= form_with model: @education do |form| %>
+  <%= form_with model: @education do |form| %>
 
-  <div>
-    <%= form.label :institution %>
-    <%= form.text_field :institution %>
-  </div>
+    <div class="form-group">
+      <%= form.label :institution %>
+      <%= form.text_field :institution, placeholder: "e.g. College of Science and Technology" %>
+    </div>
 
-  <div>
-    <%= form.label :qualification %>
-    <%= form.text_field :qualification %>
-  </div>
+    <div class="form-group">
+      <%= form.label :qualification %>
+      <%= form.text_field :qualification, placeholder: "e.g. Bachelor of Engineering in IT" %>
+    </div>
 
-  <div>
-    <%= form.submit "Create Education" %>
-  </div>
+    <%= form.submit "Create Education", class: "form-submit" %>
 
-<% end %>
+  <% end %>
+</div>

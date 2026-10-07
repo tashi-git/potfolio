@@ -1,24 +1,24 @@
-<h1>New Experience</h1>
+<div class="form-container">
+  <h1>New Experience</h1>
 
-<%= form_with model: @experience do |form| %>
+  <%= form_with model: @experience do |form| %>
 
-  <div>
-    <%= form.label :company %>
-    <%= form.text_field :company %>
-  </div>
+    <div class="form-group">
+      <%= form.label :company %>
+      <%= form.text_field :company, placeholder: "e.g. DrukSmart Private Limited" %>
+    </div>
 
-  <div>
-    <%= form.label :position %>
-    <%= form.text_field :position %>
-  </div>
+    <div class="form-group">
+      <%= form.label :position %>
+      <%= form.text_field :position, placeholder: "e.g. Software Developer Intern" %>
+    </div>
 
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description, placeholder: "Describe your experience..." %>
+    </div>
 
-  <div>
-    <%= form.submit "Create Experience" %>
-  </div>
+    <%= form.submit "Create Experience", class: "form-submit" %>
 
-<% end %>
+  <% end %>
+</div>

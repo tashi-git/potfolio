@@ -1,24 +1,24 @@
-<h1>New Project</h1>
+<div class="form-container">
+  <h1>New Project</h1>
 
-<%= form_with model: @project do |form| %>
+  <%= form_with model: @project do |form| %>
 
-  <div>
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="form-group">
+      <%= form.label :title %>
+      <%= form.text_field :title, placeholder: "e.g. Portfolio Website" %>
+    </div>
 
-  <div>
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+    <div class="form-group">
+      <%= form.label :description %>
+      <%= form.text_area :description, placeholder: "Describe your project..." %>
+    </div>
 
-  <div>
-    <%= form.label :github_url %>
-    <%= form.text_field :github_url %>
-  </div>
+    <div class="form-group">
+      <%= form.label :github_url %>
+      <%= form.text_field :github_url, placeholder: "https://github.com/..." %>
+    </div>
 
-  <div>
-    <%= form.submit "Create Project" %>
-  </div>
+    <%= form.submit "Create Project", class: "form-submit" %>
 
-<% end %>
+  <% end %>
+</div>
