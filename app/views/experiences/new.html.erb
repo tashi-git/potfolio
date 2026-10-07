@@ -1,0 +1,24 @@
+<h1>New Experience</h1>
+
+<%= form_with model: @experience do |form| %>
+
+  <div>
+    <%= form.label :company %>
+    <%= form.text_field :company %>
+  </div>
+
+  <div>
+    <%= form.label :position %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit "Create Experience" %>
+  </div>
+
+<% end %>

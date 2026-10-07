@@ -1,0 +1,19 @@
+<h1>Edit Education</h1>
+
+<%= form_with model: @education do |form| %>
+
+  <div>
+    <%= form.label :institution %>
+    <%= form.text_field :institution %>
+  </div>
+
+  <div>
+    <%= form.label :qualification %>
+    <%= form.text_field :qualification %>
+  </div>
+
+  <div>
+    <%= form.submit "Update Education" %>
+  </div>
+
+<% end %>
